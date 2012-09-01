@@ -78,6 +78,12 @@ namespace BNapi4Net.Diablo3
 
 
         System.Windows.Media.ImageSource _largeImage;
+        System.Windows.Media.ImageSource _medImage;
+        System.Windows.Media.ImageSource _smallImage;
+
+        /// <summary>
+        /// 64x64 thumnail of skill image
+        /// </summary>
         public System.Windows.Media.ImageSource LargeImage
         {
             get
@@ -90,7 +96,9 @@ namespace BNapi4Net.Diablo3
             }
         }
 
-        System.Windows.Media.ImageSource _medImage;
+        /// <summary>
+        /// 42x42 thumnail of skill image
+        /// </summary>
         public System.Windows.Media.ImageSource  MediumImage
         {
             get
@@ -103,6 +111,27 @@ namespace BNapi4Net.Diablo3
             }
         }
 
+        /// <summary>
+        /// 21x21 thumnail of skill image
+        /// </summary>
+        public System.Windows.Media.ImageSource SmallImage
+        {
+            get
+            {
+                if (_smallImage == null)
+                {
+                    _smallImage = GetImage(IconSize.Small);
+                }
+                return _smallImage;
+            }
+        }
+
+
+        /// <summary>
+        /// Download a WPF compatible image of the skill
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public System.Windows.Media.ImageSource GetImage(IconSize size)
         {
             // small or large
@@ -119,6 +148,48 @@ namespace BNapi4Net.Diablo3
             return b;
         }
 
+        System.Drawing.Image _smallIcon = null;
+        System.Drawing.Image _medIcon = null;        
+        System.Drawing.Image _largeIcon = null;
+        public System.Drawing.Image SmallIcon
+        {
+            get
+            {
+                if (_smallIcon == null)
+                {
+                    _smallIcon = GetIcon(IconSize.Small);
+                }
+                return _smallIcon;
+            }
+        }
+        public System.Drawing.Image MediumIcon
+        {
+            get
+            {
+                if (_medIcon == null)
+                {
+                    _medIcon = GetIcon(IconSize.Medium);
+                }
+                return _medIcon;
+            }
+        }
+        public System.Drawing.Image LargeIcon
+        {
+            get
+            {
+                if (_largeIcon == null)
+                {
+                    _largeIcon = GetIcon(IconSize.Large);
+                }
+                return _largeIcon;
+            }
+        }
+
+        /// <summary>
+        /// Download a GDI compatible image of the skill
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public System.Drawing.Image GetIcon(IconSize size)
         {
             System.IO.Stream s = Client.ReadMedia("d3/icons/skills/"+ (int)size + "/"+this.Icon+".png");

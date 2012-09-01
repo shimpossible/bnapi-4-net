@@ -57,7 +57,8 @@ namespace BNapi4Net.Diablo3
             }
         }
 
-        System.Drawing.Image _smallIcon = null;
+        System.Drawing.Image _smallIcon = null;        
+        System.Drawing.Image _largeIcon = null;
         public System.Drawing.Image SmallIcon
         {
             get
@@ -69,8 +70,20 @@ namespace BNapi4Net.Diablo3
                 return _smallIcon;
             }
         }
-
+        public System.Drawing.Image LargeIcon
+        {
+            get
+            {
+                if (_smallIcon == null)
+                {
+                    _smallIcon = GetIcon(IconSize.Large);
+                }
+                return _smallIcon;
+            }
+        }
+        
         System.Windows.Media.ImageSource _smallImage = null;
+        System.Windows.Media.ImageSource _largeImage = null;
         public System.Windows.Media.ImageSource SmallImage
         {
             get
@@ -81,9 +94,7 @@ namespace BNapi4Net.Diablo3
                 }
                 return _smallImage;
             }
-        }
-
-        System.Windows.Media.ImageSource _largeImage = null;
+        }        
         public System.Windows.Media.ImageSource LargeImage
         {
             get
@@ -96,6 +107,12 @@ namespace BNapi4Net.Diablo3
             }
         }
 
+        /// <summary>
+        /// Download a WPF compatible ImageSource of the given size
+        /// small is half the size of large
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public System.Windows.Media.ImageSource GetImage(IconSize size)
         {
             // small or large
@@ -111,6 +128,12 @@ namespace BNapi4Net.Diablo3
             return b;
         }
 
+        /// <summary>
+        /// Download a GDI compatible image of the icon
+        /// small is half the size of large
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public System.Drawing.Image GetIcon(IconSize size)
         {
             // small or large
@@ -121,21 +144,21 @@ namespace BNapi4Net.Diablo3
             return System.Drawing.Image.FromStream(s);
         }
 
-        public int RequiredLevel;
-        public int ItemLevel;
-        public int BonusAffixes;
-        public MinMax Dps;
-        public MinMax AttacksPerSecond;
-        public MinMax MinDamage;
-        public MinMax MaxDamage;
+        public int RequiredLevel { get; set; }
+        public int ItemLevel { get; set; }
+        public int BonusAffixes { get; set; }
+        public MinMax Dps { get; set; }
+        public MinMax AttacksPerSecond { get; set; }
+        public MinMax MinDamage { get; set; }
+        public MinMax MaxDamage { get; set; }
 
-        public List<SocketEffect> SocketEffects;
+        public List<SocketEffect> SocketEffects { get; set; }
 
-        public List<Salvage> Salvage;
+        public List<Salvage> Salvage { get; set; }
 
-        public string TypeName;
-        public ItemType Type;
-        public List<SocketedGem> Gems;
+        public string TypeName { get; set; }
+        public ItemType Type { get; set; }
+        public List<SocketedGem> Gems { get; set; }
 
         /// <summary>
         /// Numeric Value for attributes
@@ -151,25 +174,25 @@ namespace BNapi4Net.Diablo3
 
     public class Salvage
     {
-        public double Chance;
-        public Item Item;
-        public int Quantity;
+        public double Chance { get; set; }
+        public Item Item { get; set; }
+        public int Quantity { get; set; }
     }
 
     public class SocketEffect
     {
-        public ItemTypeId ItemTypeId;
-        public string ItemTypeName;
+        public ItemTypeId ItemTypeId { get; set; }
+        public string ItemTypeName { get; set; }
 
         /// <summary>
         /// Numeric Value for attributes
         /// </summary>
-        public Dictionary<string, MinMax> AttributesRaw;
+        public Dictionary<string, MinMax> AttributesRaw { get; set; }
 
         /// <summary>
         /// Text descriptions of attributes
         /// </summary>
-        public List<String> Attributes;
+        public List<String> Attributes { get; set; }
     }
 
     public class SocketedGem
@@ -179,23 +202,23 @@ namespace BNapi4Net.Diablo3
         /// <summary>
         /// Numeric Value for attributes
         /// </summary>
-        public Dictionary<string, MinMax> AttributesRaw;
+        public Dictionary<string, MinMax> AttributesRaw { get; set; }
 
         /// <summary>
         /// Text descriptions of attributes
         /// </summary>
-        public List<String> Attributes;
+        public List<String> Attributes { get; set; }
     }
 
     public class MinMax
     {
-        public double Min;
-        public double Max;
+        public double Min { get; set; }
+        public double Max { get; set; }
     }
 
     public class ItemType
     {
-        public ItemTypeId Id; // TODO: make this an ENUM
-        public bool TwoHanded;
+        public ItemTypeId Id { get; set; }
+        public bool TwoHanded { get; set; }
     }
 }

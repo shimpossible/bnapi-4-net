@@ -7,8 +7,8 @@ namespace BNapi4Net.Diablo3
 {
     public class Kills
     {
-        public int Monsters;
-        public int Elites;
-        public int HardcoreMonsters;
+        public int Monsters { get; set; }
+        public int Elites { get; set; }
+        public int HardcoreMonsters { get; set; }
     }
 }

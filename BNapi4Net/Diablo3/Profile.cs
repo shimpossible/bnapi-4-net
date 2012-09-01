@@ -35,28 +35,28 @@ namespace BNapi4Net.Diablo3
 
     public class Progression
     {
-        public Progress Normal;
-        public Progress Nightmare;
-        public Progress Hell;
-        public Progress Inferno;
+        public Progress Normal { get; set; }
+        public Progress Nightmare { get; set; }
+        public Progress Hell { get; set; }
+        public Progress Inferno { get; set; }
     }
     public class Progress
     {
-        public ActProgress Act1;
-        public ActProgress Act2;
-        public ActProgress Act3;
-        public ActProgress Act4;
+        public ActProgress Act1 { get; set; }
+        public ActProgress Act2 { get; set; }
+        public ActProgress Act3 { get; set; }
+        public ActProgress Act4 { get; set; }
     }
 
     public class ActProgress
     {
-        public bool Completed;
-        public List<Quest> CompletedQuests;
+        public bool Completed { get; set; }
+        public List<Quest> CompletedQuests { get; set; }
     }
     public class Quest
     {
-        public string Slug;
-        public string Name;
+        public string Slug { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {
@@ -66,10 +66,10 @@ namespace BNapi4Net.Diablo3
 
     public class Death
     {
-        public int Killer;
-        public int Location;
+        public int Killer { get; set; }
+        public int Location { get; set; }
         [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime Time;
+        public DateTime Time { get; set; }
     }
 
 }

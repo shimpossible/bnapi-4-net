@@ -7,13 +7,13 @@ namespace BNapi4Net.Diablo3
 {
     public class Follower
     {
-        public string Slug;
-        public string Name;
-        public string RealName;
-        public string Portrait;
-        public int Level;
-        public Dictionary<string, Item> Items;
-        public List<Skill> Skills;
-        public List<Skill> Passive;
+        public string Slug { get; set; }
+        public string Name { get; set; }
+        public string RealName { get; set; }
+        public string Portrait { get; set; }
+        public int Level { get; set; }
+        public Dictionary<string, Item> Items { get; set; }
+        public List<Skill> Skills { get; set; }
+        public List<Skill> Passive { get; set; }
     }
 }
