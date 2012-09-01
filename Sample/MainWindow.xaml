@@ -1,0 +1,250 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Sample.MainWindow"
+        Title="MainWindow" Width="1010" Height="1024"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True"
+        Background="Black"
+        >
+    <Window.Resources>
+        <!-- MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"  -->
+        <ResourceDictionary Source="ProfileTemplates.xaml" />
+    </Window.Resources>
+    <StackPanel>
+        <Grid Width="994" Height="645"
+    		Background="Green">
+            <!-- {Binding Path=PaperDoll} -->
+            <Image Source="{Binding PaperDoll}" Stretch="None"/>
+            <Image Source="images/inventory-lines.png" Stretch="None" Margin="131,55,-131,-55"/>
+
+            <Border Margin="389,56,119,515" >
+                <TextBlock
+    				x:Name="Name"
+    				VerticalAlignment="Center"
+    				HorizontalAlignment="Center" 
+    				Text="Enter BattleTag"
+    				TextAlignment="Center" FontFamily="Palatino Linotype" FontSize="46" Foreground="#FFFFEAD4"/>
+            </Border>
+            <TextBlock x:Name="Class" HorizontalAlignment="Left" Margin="598,41,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFFFEAD4" FontSize="14"/>
+            <Grid
+    			HorizontalAlignment="Left" Height="490" Margin="265,154,0,0" VerticalAlignment="Top" Width="725">
+
+                <!-- Item Images -->
+                <Grid Width="305" Height="425"
+    				Margin="209,0,0,0"
+    				HorizontalAlignment="Left"
+    				VerticalAlignment="Top">
+                    <Control 
+    					Margin="121,4,0,0"
+    					Height="66" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[head]}"/>
+                    <Control 
+    					Margin="113,74,0,0"
+    					Height="113" Width="82"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[torso]}"/>
+                    <Control 
+    					Margin="121,0,0,14"
+    					Height="88" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[feet]}"/>
+                    <Control 
+    					Margin="13,127,0,0"
+    					Height="88" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[hands]}"/>
+                    <Control 
+    					Margin="39,28,0,0"
+    					Height="88" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[shoulders]}" />
+                    <Control 
+    					Margin="121,0,0,106"
+    					Height="88" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[legs]}" />
+                    <Control 
+    					Margin="0,127,10,0"
+    					Height="88" Width="66"
+    					HorizontalAlignment="Right"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[bracers]}"/>
+                    <Control 
+    					Margin="13,0,0,13"
+    					Height="130" Width="66"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[mainHand]}"/>
+                    <Control 
+    					Margin="0,0,10,13"
+    					Height="130" Width="66"
+    					HorizontalAlignment="Right"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[offHand]}"/>
+                    <Control 
+    					Margin="113,193,10,0"
+    					Height="34" Width="82"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[waist]}"/>
+                    <Control 
+    					Margin="0,0,22,156"
+    					Height="42" Width="42"
+    					HorizontalAlignment="Right"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[rightFinger]}"/>
+                    <Control 
+    					Margin="25,0,0,156"
+    					Height="42" Width="42"
+    					HorizontalAlignment="Left"
+    					VerticalAlignment="Bottom"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[leftFinger]}"/>
+                    <Control 
+    					Margin="0,48,44,0"
+    					Height="56" Width="56"
+    					HorizontalAlignment="Right"
+    					VerticalAlignment="Top"
+                        MouseLeave="Head_MouseLeave" MouseEnter="Head_MouseEnter"
+    					Template="{StaticResource ResourceKey=gear-image-template}"
+    					Tag="{Binding Hero.Items[neck]}" />
+                </Grid>
+
+                <TextBlock Style="{StaticResource slot-head}" Tag="{Binding Hero.Items[head]}"/>
+                <TextBlock Style="{StaticResource slot-neck}" Tag="{Binding Hero.Items[neck]}"/>
+                <TextBlock Style="{StaticResource slot-bracers}" Tag="{Binding Hero.Items[bracers]}"/>
+                <TextBlock Style="{StaticResource slot-waist}" Tag="{Binding Hero.Items[waist]}"/>
+                <TextBlock Style="{StaticResource slot-rightFinger}" Tag="{Binding Hero.Items[rightFinger]}"/>
+                <TextBlock Style="{StaticResource slot-offHand}" Tag="{Binding Hero.Items[offHand]}"/>
+                <TextBlock Style="{StaticResource slot-feet}" Tag="{Binding Hero.Items[feet]}"/>
+
+                <TextBlock Style="{StaticResource slot-shoulders}" Tag="{Binding Hero.Items[shoulders]}" />
+                <TextBlock Style="{StaticResource slot-torso}" Tag="{Binding Hero.Items[torso]}"/>
+                <TextBlock Style="{StaticResource slot-hands}" Tag="{Binding Hero.Items[hands]}"/>
+                <TextBlock Style="{StaticResource slot-leftFinger}" Tag="{Binding Hero.Items[leftFinger]}"/>
+                <TextBlock Style="{StaticResource slot-legs}" Tag="{Binding Hero.Items[legs]}"/>
+                <TextBlock Style="{StaticResource slot-mainHand}" Tag="{Binding Hero.Items[mainHand]}"/>
+            </Grid>
+            <WebBrowser x:Name="toolTip" 
+    			Visibility="Collapsed"
+    			HorizontalAlignment="Left" 
+    			Height="351"
+    			Margin="10,285,0,0"
+    			VerticalAlignment="Top" 
+    			Width="354" 
+    			LoadCompleted="toolTip_LoadCompleted"
+    			ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+            <TextBox Width="120" Height="22" HorizontalAlignment="Left" 
+					Margin="11,8,0,0" VerticalAlignment="Top"
+                     Name ="BattleTag"
+			 />
+            <Button Width="80" Height="22" 
+				HorizontalAlignment="Left" Margin="135,8,0,0" VerticalAlignment="Top" 
+			 	Content="Load" Click="Load_Click"/>
+            <ComboBox x:Name="heroes"
+    			HorizontalAlignment="Left" Margin="11,36,0,0" VerticalAlignment="Top" 
+    			Width="120"
+    			ItemsSource="{Binding Profile.Heroes}"
+    			DisplayMemberPath="Name"
+    			SelectionChanged="ComboBox_SelectionChanged"
+                  />
+        </Grid>
+
+        <Border BorderThickness="0,0,0,2" BorderBrush="#312A1E"
+                Margin="0,0,0,16">
+            <TextBlock Foreground="#F3E6D0" FontSize="16"
+                       FontFamily="Palatino Linotype"
+                       Padding="0,0,0,7"><Run Text="SKILLS"/></TextBlock>
+        </Border>
+        <Grid x:Name="ActiveSkills" Height="163" Width="546">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="0" Grid.Column="0"
+                     Tag="0" DataContext="{Binding Hero.Skills.Active[0]}"
+                     />
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="0" Grid.Column="1"
+                     Tag="1" DataContext="{Binding Hero.Skills.Active[1]}"
+                     />
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="1" Grid.Column="0"
+                     Tag="2" DataContext="{Binding Hero.Skills.Active[2]}"
+                     />
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="1" Grid.Column="1"
+                     Tag="3" DataContext="{Binding Hero.Skills.Active[3]}"
+                     />
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="2" Grid.Column="0"
+                     Tag="4" DataContext="{Binding Hero.Skills.Active[4]}"
+                     />
+            <Control Template="{StaticResource ResourceKey=active-skill-template}"
+                     Style="{StaticResource ResourceKey=active-skill}"
+                     Grid.Row="2" Grid.Column="1"
+                     Tag="5" DataContext="{Binding Hero.Skills.Active[5]}"
+                     />
+        </Grid>
+        <Border BorderThickness="0,0,0,1" BorderBrush="#312A1E"
+                Margin="0,17,0,17"/>
+        <Grid x:Name="PassiveSkills">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Control Template="{StaticResource ResourceKey=passive-skill-template}"                     
+                     DataContext="{Binding Hero.Skills.Passive[0]}"
+                         Width="177"
+                     />
+                <Control Template="{StaticResource ResourceKey=passive-skill-template}"                     
+                     DataContext="{Binding Hero.Skills.Passive[1]}"
+                         Width="177"
+                     />
+                <Control Template="{StaticResource ResourceKey=passive-skill-template}"                     
+                     DataContext="{Binding Hero.Skills.Passive[2]}"
+                         Width="177"
+                     />
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Window>

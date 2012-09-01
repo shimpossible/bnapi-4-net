@@ -1,0 +1,293 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+        <Style x:Key="gear-image" TargetType="{x:Type Image}">
+            <Setter Property="Source" Value="{Binding Tag.LargeImage, RelativeSource={x:Static RelativeSource.Self}}" />
+            <Setter Property="Stretch" Value="None" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style x:Key="gear-label" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="Width" Value="186" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Text" Value="{Binding Tag.Name, RelativeSource={x:Static RelativeSource.Self}}" />
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="1"
+                                      Direction="315"
+                                      Color="Black"
+                                      BlurRadius="0"
+                                      Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Foreground" Value="White" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="blue">
+                    <Setter Property="Foreground" Value="#a0c3ff" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="gray">
+                    <Setter Property="Foreground" Value="#c1c1c1" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="green">
+                    <Setter Property="Foreground" Value="#a4df44" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="orange">
+                    <Setter Property="Foreground" Value="#fba412" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="white">
+                    <Setter Property="Foreground" Value="White" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={x:Static RelativeSource.Self}}" Value="yellow">
+                    <Setter Property="Foreground" Value="#ffff00" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="slot-shoulders" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,30,0,0" />
+        </Style>
+        <Style x:Key="slot-torso" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,99,0,0" />
+        </Style>
+        <Style x:Key="slot-hands" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,168,0,0" />
+        </Style>
+        <Style x:Key="slot-leftFinger" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,237,0,0" />
+        </Style>
+        <Style x:Key="slot-legs" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,301,0,0" />
+        </Style>
+        <Style x:Key="slot-mainHand" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,376,0,0" />
+        </Style>
+
+        <Style x:Key="slot-head" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,6,0,0" />
+        </Style>
+        <Style x:Key="slot-neck" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,75,0,0" />
+        </Style>
+        <Style x:Key="slot-bracers" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,144,0,0" />
+        </Style>
+        <Style x:Key="slot-waist" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,213,0,0" />
+        </Style>
+        <Style x:Key="slot-rightFinger" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,274,0,0" />
+        </Style>
+        <Style x:Key="slot-offHand" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,340,0,0" />
+        </Style>
+        <Style x:Key="slot-feet" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource gear-label}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,423,0,0" />
+        </Style>
+
+        <ControlTemplate TargetType="{x:Type Control}" x:Key="gear-image-template">
+            <Grid>
+                <Border x:Name="mask" CornerRadius="4" Background="White">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+
+                <!-- can set the mask on the image directly because it will
+                    only clip the top left corner
+                -->
+                <Grid>
+                    <Grid.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=mask}"/>
+                    </Grid.OpacityMask>
+                    <Image Stretch="None">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="blue">
+                                        <Setter Property="Source" Value="images/blue.png" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="gray">
+                                        <Setter Property="Source" Value="images/brown.png" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="green">
+                                        <Setter Property="Source" Value="images/green.png" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="orange">
+                                        <Setter Property="Source" Value="images/orange.png" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="white">
+                                        <Setter Property="Source" Value="images/brown.png" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="yellow">
+                                        <Setter Property="Source" Value="images/yellow.png" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Grid>
+                <Border Tag="{TemplateBinding Tag}"
+                BorderThickness="1"                
+                CornerRadius="4">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="blue">
+                                    <Setter Property="BorderBrush" Value="#a0c3ff" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="gray">
+                                    <Setter Property="BorderBrush" Value="#c1c1c1" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="green">
+                                    <Setter Property="BorderBrush" Value="#a4df44" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="orange">
+                                    <Setter Property="BorderBrush" Value="#fba412" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="white">
+                                    <Setter Property="BorderBrush" Value="White" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag.DisplayColor, RelativeSource={RelativeSource TemplatedParent}}" Value="yellow">
+                                    <Setter Property="BorderBrush" Value="#ffff00" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#70000000"/>
+                            <GradientStop Color="#00000000" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Image Style="{StaticResource gear-image}"  
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="-100,-100,-100,-100"
+                        Tag="{TemplateBinding Tag}"
+                        x:Name="MainHand"            
+                        />
+            </Grid>
+        </ControlTemplate>
+
+        <Style TargetType="{x:Type Control}" x:Key="active-skill">
+            <Setter Property="Width" Value="259" />
+            <Setter Property="Height" Value="44" />
+        </Style>
+        <ControlTemplate x:Key="active-skill-template">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="42" Height="42"
+                		VerticalAlignment="Center"
+                		Source="{Binding Skill.MediumImage}"
+                		Stretch="None"
+                		Margin="0,0,3,0"/>
+                <Rectangle
+                    Margin="-58,-4"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="22" Height="22">
+                    <Rectangle.Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="0">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="0,0,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="1">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="22,0,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="2">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="0,22,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="3">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="22,22,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="4">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="0,44,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" Value="5">
+                                    <Setter Property="Fill">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="images/skill-overlays.png" Stretch="None" Viewbox="22,44,22,22" ViewboxUnits="Absolute"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+
+                </Rectangle>
+                <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Skill.Name}" Foreground="#F3E6D0"
+                                   FontFamily="Arial" FontSize="12px"/>
+                    <TextBlock Text="{Binding Rune.Name}" Foreground="#796D55"
+                               Padding="3"
+                                   FontFamily="Arial" FontSize="11px"/>
+                </StackPanel>
+            </StackPanel>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="passive-skill-template">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="42" Height="42"
+                		VerticalAlignment="Center"
+                		Source="{Binding Skill.MediumImage}"
+                		Stretch="None"
+                		Margin="0,0,3,0"/>
+                <!-- {Binding Skill.Name} -->
+                <TextBlock Text="{Binding Skill.Name}" 
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Foreground="#F3E6D0"
+                           Margin="5,0,0,0" Padding="1" Width="110"
+                           FontFamily="Arial" FontSize="12px"/>
+            </StackPanel>
+        </ControlTemplate>
+</ResourceDictionary>
