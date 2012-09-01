@@ -6,7 +6,6 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace BNapi4Net.Cache
 {
@@ -225,8 +224,10 @@ namespace BNapi4Net.Cache
                 spoolQueue.AddLast(entry);
             }
 
+            
             // Queue work
-            Task.Factory.StartNew(new Action(() =>
+            ThreadPool.QueueUserWorkItem( new WaitCallback( ( object _) =>
+            //Task.Factory.StartNew(new Action(() =>            
             {
                 SpoolTask();
             }));

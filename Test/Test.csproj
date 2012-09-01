@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BNapi4Net\BNapi4Net.csproj">
+    <ProjectReference Include="..\BNapi4Net\BNapi4Net 4.0.csproj">
       <Project>{17490cb9-f628-447a-8810-5ec3bcce682b}</Project>
-      <Name>BNapi4Net</Name>
+      <Name>BNapi4Net 4.0</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
